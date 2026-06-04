@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PlayActivity 详情页选项菜单 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_copy_password"
+        android:icon="@drawable/ic_content_copy"
+        android:title="@string/btn_copy"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_export_single"
+        android:icon="@drawable/ic_export"
+        android:title="@string/menu_export"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 可编辑的密码字段行：icon + label/EditText 垂直布局 + 操作按钮 -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    app:strokeColor="?attr/colorOutline"
+    app:strokeWidth="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- 左侧字段图标 -->
+        <ImageView
+            android:id="@+id/field_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="12dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_info"
+            android:tint="?attr/colorPrimary" />
+
+        <!-- 字段标签（小字灰色，在 EditText 上方） -->
+        <TextView
+            android:id="@+id/field_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/field_icon"
+            android:layout_toStartOf="@+id/field_action"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="标签"
+            android:textSize="12sp"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <!-- 直接使用 EditText，与查看模式的 TextView 保持相同尺寸 -->
+        <EditText
+            android:id="@+id/field_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/field_label"
+            android:layout_toEndOf="@id/field_icon"
+            android:layout_toStartOf="@+id/field_action"
+            android:layout_marginTop="2dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:background="@null"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textCursorDrawable="@null"
+            android:maxLines="3"
+            android:inputType="text"
+            android:importantForAutofill="no"
+            android:hint="—" />
+
+        <!-- 右侧操作按钮 -->
+        <ImageButton
+            android:id="@+id/field_action"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="操作"
+            android:padding="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_content_copy"
+            android:tint="?attr/colorPrimary" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

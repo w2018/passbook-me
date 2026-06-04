@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">个人密码薄</string>
+
+    <!-- 列表长按删除 -->
+    <string name="delete_confirm">确认删除"%s"吗？</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_failed">删除失败</string>
+
+    <!-- 主界面 -->
+    <string name="search_hint">搜索密码…</string>
+    <string name="btn_add">添加密码</string>
+    <string name="no_data">暂无密码数据</string>
+    <string name="menu_backup">FTP备份</string>
+    <string name="menu_export">导出数据</string>
+    <string name="menu_import">导入数据</string>
+    <string name="menu_about">关于</string>
+    <string name="record_count">共 %d 条记录</string>
+
+    <!-- 密码对话框 -->
+    <string name="dlg_title_verify">验证密码</string>
+    <string name="dlg_title_set">设置主密码</string>
+    <string name="dlg_hint_password">请输入密码</string>
+    <string name="dlg_hint_confirm">请再次输入密码</string>
+    <string name="btn_confirm">确认</string>
+    <string name="btn_cancel">取消</string>
+    <string name="error_password_empty">密码不能为空</string>
+    <string name="error_password_mismatch">两次密码不一致</string>
+    <string name="error_password_wrong">密码错误</string>
+
+    <!-- PlayActivity 详情页 -->
+    <string name="title_detail">密码详情</string>
+    <string name="label_title">名称</string>
+    <string name="label_url">网址</string>
+    <string name="label_username">用户名</string>
+    <string name="label_password">密码</string>
+    <string name="label_email">邮箱</string>
+    <string name="label_phone">电话</string>
+    <string name="label_remarks">备注</string>
+    <string name="label_time">创建时间</string>
+    <string name="btn_copy">复制</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_edit">编辑</string>
+    <string name="btn_delete">删除</string>
+    <string name="btn_share">分享</string>
+    <string name="copied">已复制到剪贴板</string>
+    <string name="confirm_delete">确认删除此条记录？</string>
+    <string name="confirm_delete_title">删除确认</string>
+
+    <!-- FTP备份 -->
+    <string name="ftp_title">FTP备份设置</string>
+    <string name="ftp_host">FTP服务器地址</string>
+    <string name="ftp_port">端口</string>
+    <string name="ftp_user">用户名</string>
+    <string name="ftp_password">密码</string>
+    <string name="ftp_path">远程路径</string>
+    <string name="ftp_upload">上传备份</string>
+    <string name="ftp_success">备份上传成功</string>
+    <string name="ftp_failed">上传失败</string>
+    <string name="ftp_connecting">正在连接…</string>
+
+    <!-- 导入导出 -->
+    <string name="export_success">数据导出成功</string>
+    <string name="export_failed">导出失败</string>
+    <string name="import_success">数据导入成功，共 %d 条记录</string>
+    <string name="import_failed">导入失败，数据格式不兼容</string>
+    <string name="import_confirm">确认从文件导入数据？这不会覆盖现有数据。</string>
+    <string name="export_format">导出格式</string>
+    <string name="format_encrypted_db">加密数据库 (.db)</string>
+    <string name="format_json">明文JSON (.json)</string>
+
+    <!-- 权限 -->
+    <string name="permission_storage_title">需要存储权限</string>
+    <string name="permission_storage_msg">导入导出功能需要访问设备存储空间</string>
+
+    <!-- 其他 -->
+    <!-- 关于页面 -->
+    <string name="about_text">个人密码本 v2.0\nMaterial Design 3 重建版\n安全、简洁、高效</string>
+    <string name="about_description">个人密码薄 v1.0\n\n一款安全可靠的本地密码管理工具。\n采用 SQLCipher 加密存储，无网络传输，\n确保您的密码数据始终私密、安全。\n\n发布名: passbook-me</string>
+    <string name="about_version_label">版本</string>
+    <string name="about_author_label">作者</string>
+    <string name="about_author_placeholder">w2018</string>
+    <string name="about_source_label">开源地址</string>
+    <string name="about_source_placeholder">https://github.com/w2018/passbook-me</string>
+    <string name="lock_title">应用已锁定</string>
+    <string name="lock_msg">请验证主密码以解锁应用</string>
+
+    <!-- 启动密码验证 -->
+    <string name="set_password_title">设置启动密码</string>
+    <string name="set_password_hint">请设置6位以上启动密码</string>
+    <string name="confirm_password_hint">请再次输入密码确认</string>
+    <string name="verify_password_title">验证启动密码</string>
+    <string name="verify_password_hint">请输入启动密码</string>
+    <string name="btn_set_password">设置密码</string>
+    <string name="btn_verify">验证</string>
+    <string name="btn_forgot_password">忘记密码？</string>
+    <string name="forgot_password_confirm">重置密码将清除当前密码设置，确定继续？</string>
+    <string name="password_too_short">密码至少需要6位</string>
+    <string name="password_set_success">密码设置成功</string>
+    <string name="password_verify_success">验证通过</string>
+    <string name="password_verify_failed">密码错误，请重试</string>
+    <string name="password_error_retry">密码错误，还剩 %d 次机会</string>
+    <string name="password_reset">密码已重置，请重新设置</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="skip_set_password">跳过，下次再说</string>
+
+    <!-- 密保问题 -->
+    <string name="security_question_title">设置密保问题</string>
+    <string name="security_question_hint">设置密保问题以便找回密码</string>
+    <string name="security_question_desc">请选择三个密保问题并填写答案（用于忘记密码时验证身份）</string>
+    <string name="question_1_label">问题一</string>
+    <string name="question_2_label">问题二</string>
+    <string name="question_3_label">问题三</string>
+    <string name="answer_hint">请输入答案</string>
+    <string name="answer_hint_1">答案一</string>
+    <string name="answer_hint_2">答案二</string>
+    <string name="answer_hint_3">答案三</string>
+    <string name="btn_save_questions">保存密保问题</string>
+    <string name="btn_skip_questions">跳过，暂不设置</string>
+    <string name="questions_saved">密保问题设置成功</string>
+    <string name="verify_question_title">验证密保问题</string>
+    <string name="verify_question_hint">请回答以下密保问题以验证身份</string>
+    <string name="btn_verify_answers">验证答案</string>
+    <string name="verify_question_success">身份验证通过，请重置密码</string>
+    <string name="verify_question_failed">答案错误，请重试</string>
+    <string name="no_security_question">未设置密保问题，将清除密码并重置</string>
+    <string name="question_select_hint">请选择密保问题</string>
+
+    <!-- 密保问题验证补充 -->
+    <string name="security_answer_empty_hint">答案不能为空</string>
+    <string name="security_question_duplicate_hint">问题不能重复</string>
+    <string name="security_save_success">密保问题保存成功</string>
+    <string name="security_no_questions_hint">未设置密保问题</string>
+    <string name="security_verify_success">验证通过</string>
+    <string name="security_verify_failed">验证失败，请重试</string>
+
+    <!-- 预设密保问题列表 -->
+    <string name="q_default_1">你的小学名称是什么？</string>
+    <string name="q_default_2">你的出生城市是哪里？</string>
+    <string name="q_default_3">你最喜欢的书籍是什么？</string>
+    <string name="q_default_4">你的宠物名字是什么？</string>
+    <string name="q_default_5">你父亲的姓名是什么？</string>
+    <string name="q_default_6">你的中学名称是什么？</string>
+    <string name="q_default_7">你最难忘的旅行地点是哪里？</string>
+    <string name="q_default_8">你的偶像或榜样是谁？</string>
+
+    <!-- 密保问题数组 -->
+    <string-array name="security_questions">
+        <item>@string/q_default_1</item>
+        <item>@string/q_default_2</item>
+        <item>@string/q_default_3</item>
+        <item>@string/q_default_4</item>
+        <item>@string/q_default_5</item>
+        <item>@string/q_default_6</item>
+        <item>@string/q_default_7</item>
+        <item>@string/q_default_8</item>
+    </string-array>
+
+    <!-- FTP配置界面 -->
+    <string name="ftp_config_title">FTP服务器配置</string>
+    <string name="ftp_config_hint">配置FTP服务器信息用于备份密码数据</string>
+    <string name="btn_test_connection">测试连接</string>
+    <string name="btn_save_config">保存配置</string>
+    <string name="connection_testing">正在测试连接…</string>
+    <string name="connection_success">连接测试成功 ✓</string>
+    <string name="connection_failed">连接失败，请检查配置</string>
+    <string name="connection_test_hint">先保存再测试，或直接点击测试</string>
+    <string name="config_saved">FTP配置已保存</string>
+    <string name="config_save_failed">保存配置失败</string>
+    <string name="ftp_config_cleared">FTP配置已清除</string>
+    <string name="ftp_config_fields_hint">请填写完整的FTP配置信息</string>
+    <string name="ftp_config_invalid_port">端口号格式不正确</string>
+    <string name="ftp_host_hint">例如 192.168.1.100</string>
+    <string name="ftp_port_hint">默认 21</string>
+    <string name="ftp_path_hint">例如 /backup</string>
+    <string name="btn_clear_config">清除配置</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 色彩方案 (Material 1.5.0 兼容) -->
+    <color name="primary">#1B6EF3</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#D8E2FF</color>
+    <color name="on_primary_container">#001A41</color>
+    <color name="secondary">#555F71</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#D9E3F8</color>
+    <color name="on_secondary_container">#121C2B</color>
+    <color name="tertiary">#6E5676</color>
+    <color name="on_tertiary">#FFFFFF</color>
+    <color name="tertiary_container">#F7D8FF</color>
+    <color name="on_tertiary_container">#271430</color>
+    <color name="error">#BA1A1A</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="error_container">#FFDAD6</color>
+    <color name="on_error_container">#410002</color>
+    <color name="background">#FEFBFF</color>
+    <color name="on_background">#1B1B1F</color>
+    <color name="surface">#FEFBFF</color>
+    <color name="on_surface">#1B1B1F</color>
+    <color name="surface_variant">#E1E2EC</color>
+    <color name="on_surface_variant">#44474E</color>
+    <color name="outline">#74777F</color>
+    <color name="shadow">#000000</color>
+
+    <!-- 功能色 -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_stroke">#E1E2EC</color>
+    <color name="icon_tint">#44474E</color>
+    <color name="search_bar_bg">#F0F0F3</color>
+    <color name="fab_color">#1B6EF3</color>
+    <color name="divider">#E1E2EC</color>
+    <color name="status_insecure">#F5A623</color>
+
+    <!-- 深色主题 -->
+    <color name="dark_primary">#B0C6FF</color>
+    <color name="dark_on_primary">#002A6A</color>
+    <color name="dark_primary_container">#004495</color>
+    <color name="dark_on_primary_container">#D8E2FF</color>
+    <color name="dark_secondary">#BDC7DC</color>
+    <color name="dark_on_secondary">#273141</color>
+    <color name="dark_secondary_container">#3D4758</color>
+    <color name="dark_on_secondary_container">#D9E3F8</color>
+    <color name="dark_background">#1B1B1F</color>
+    <color name="dark_on_background">#E3E2E6</color>
+    <color name="dark_surface">#1B1B1F</color>
+    <color name="dark_on_surface">#E3E2E6</color>
+    <color name="dark_surface_variant">#44474E</color>
+    <color name="dark_on_surface_variant">#C4C6D0</color>
+    <color name="dark_card_background">#252528</color>
+    <color name="dark_card_stroke">#44474E</color>
+    <color name="dark_search_bar_bg">#2E2E32</color>
+    <color name="dark_divider">#44474E</color>
+</resources>

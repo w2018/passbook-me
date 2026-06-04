@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "top.zw.passwd"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilters "arm64-v8a"
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    // AndroidX 核心
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.core:core:1.6.0'
+    implementation 'androidx.activity:activity:1.3.1'
+    implementation 'androidx.fragment:fragment:1.3.6'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+    // Material Design 3 (首个M3版本, 兼容compileSdk 31)
+    implementation 'com.google.android.material:material:1.5.0'
+
+    // SQLCipher 加密数据库 (与原项目完全一致)
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.6'
+
+    // Apache Commons Net (FTP支持, 与原项目完全一致)
+    implementation 'commons-net:commons-net:3.6'
+
+    // EncryptedSharedPreferences (FTP配置安全持久化, 新增)
+    implementation 'androidx.security:security-crypto:1.1.0-alpha03'
+
+    // JSON 支持 (org.json 已内置在Android SDK, 无需额外引入)
+}

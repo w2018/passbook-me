@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 盾牌图标（密码本/安全主题），居中，72dp在108dp画布内留18dp安全边距 -->
+    <group
+        android:translateX="18"
+        android:translateY="18">
+        <!-- 盾牌外形 -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M54,72L54,72C46.27,72 40,65.73 40,58L40,30C40,27.79 41.79,26 44,26L64,26C66.21,26 68,27.79 68,30L68,58C68,65.73 61.73,72 54,72Z" />
+        <!-- 盾牌顶部弧线 -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M40,30C40,22.27 46.27,16 54,16C61.73,16 68,22.27 68,30L68,34L40,34L40,30Z" />
+        <!-- 钥匙孔（上部圆形） -->
+        <path
+            android:fillColor="#1565C0"
+            android:pathData="M54,38C57.31,38 60,40.69 60,44C60,47.31 57.31,50 54,50C50.69,50 48,47.31 48,44C48,40.69 50.69,38 54,38Z" />
+        <!-- 钥匙孔（下部矩形） -->
+        <path
+            android:fillColor="#1565C0"
+            android:pathData="M51,50L57,50L57,58C57,59.66 55.66,61 54,61C52.34,61 51,59.66 51,58Z" />
+    </group>
+</vector>

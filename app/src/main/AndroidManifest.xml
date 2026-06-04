@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="top.zw.passwd">
+
+    <!-- 网络权限(FTP备份) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 存储权限(导入导出/数据库文件) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 前台服务(FTP后台传输) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="个人密码薄"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Passwd">
+
+        <activity
+            android:name=".VerifyPasswordActivity"
+            android:exported="true"
+            android:label="个人密码薄"
+            android:theme="@style/Theme.Passwd">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SetPasswordActivity"
+            android:exported="false"
+            android:label="设置密码"
+            android:theme="@style/Theme.Passwd" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="个人密码薄"
+            android:theme="@style/Theme.Passwd" />
+
+        <activity
+            android:name=".PlayActivity"
+            android:exported="false"
+            android:label="密码详情"
+            android:theme="@style/Theme.Passwd"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".EditRecordActivity"
+            android:exported="false"
+            android:label="新建记录"
+            android:theme="@style/Theme.Passwd"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".SecurityQuestionActivity"
+            android:exported="false"
+            android:label="设置密保问题"
+            android:theme="@style/Theme.Passwd" />
+
+        <activity
+            android:name=".VerifyQuestionActivity"
+            android:exported="false"
+            android:label="验证密保问题"
+            android:theme="@style/Theme.Passwd" />
+
+        <activity
+            android:name=".FtpConfigActivity"
+            android:exported="false"
+            android:label="FTP配置"
+            android:theme="@style/Theme.Passwd" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,45 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Local
+/local.properties
+*.keystore
+*.jks
+*.key
+*.pem
+*.crt
+
+# Environment & secrets
+*.env
+.env.*
+**/secrets/
+**/credentials/
+
+# APK outputs
+*.apk
+*.aab
+
+# Build cache
+.cxx/
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/navEditor.xml
+
+# OS
+*~
+*.swp
+*.swo
+
+# Gradle wrapper distribution
+gradle-7.3.3-bin.zip
+gradle*.zip
