@@ -1,12 +1,11 @@
-name: Android CI Build
+name: Android CI Build - Release APK
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  release:
-    types: [published]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -31,33 +30,12 @@ jobs:
       run: |
         sed -i '/android\.aapt2FromMavenOverride/d' gradle.properties
 
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
-
-    - name: Build Release APK (unsigned)
-      if: github.event_name == 'release'
+    - name: Build Release APK (with R8 ProGuard)
       run: ./gradlew assembleRelease
 
-    - name: Upload Debug APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-debug
-        path: app/build/outputs/apk/debug/*.apk
-        retention-days: 90
-
     - name: Upload Release APK
-      if: github.event_name == 'release'
       uses: actions/upload-artifact@v4
       with:
-        name: app-release-unsigned
+        name: app-release
         path: app/build/outputs/apk/release/*.apk
         retention-days: 90
-
-    - name: Upload APK to Release
-      if: github.event_name == 'release'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        gh release upload ${{ github.event.release.tag_name }} \
-          app/build/outputs/apk/release/*.apk \
-          --repo ${{ github.repository }}
