@@ -9,8 +9,8 @@ android {
         applicationId "top.zw.passwd"
         minSdk 21
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         ndk {
             abiFilters "arm64-v8a"
@@ -42,7 +42,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -77,6 +79,9 @@ dependencies {
 
     // EncryptedSharedPreferences (FTP配置安全持久化, 新增)
     implementation 'androidx.security:security-crypto:1.1.0-alpha03'
+
+    // 阿里云 OSS Android SDK
+    implementation 'com.aliyun.dpa:oss-android-sdk:2.9.13'
 
     // JSON 支持 (org.json 已内置在Android SDK, 无需额外引入)
 }

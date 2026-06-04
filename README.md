@@ -11,7 +11,7 @@
 **个人密码薄** 是一款基于 Android 平台的本地离线密码管理工具，使用 **SQLCipher** 对数据进行 AES-256 加密存储，保障用户隐私安全。所有密码数据仅存储在设备本地，无云端同步，用户可自主通过 FTP 备份或导入/导出功能进行数据迁移。
 
 - **包名：** `top.zw.passwd`
-- **版本：** v1.0（`compileSdk 34` / `minSdk 21` / `targetSdk 34`）
+- **版本：** v1.1（`compileSdk 34` / `minSdk 21` / `targetSdk 34`）
 - **数据库引擎：** SQLCipher 3.5.6（加密 SQLite）
 - **UI 框架：** Material Design 3 + AndroidX
 
@@ -87,6 +87,7 @@ passwd_v2/
 - **分享功能**：可将密码信息分享给其他应用
 
 ### 💾 数据备份与迁移
+- **OSS云备份**：支持阿里云OSS，一键上传加密数据库至云端存储（自动补全https协议头）
 - **FTP备份**：配置FTP服务器后，一键上传加密数据库文件至远程服务器
 - **导入/导出**：
   - 加密DB格式：完整导出加密数据库文件（含密码保护）
@@ -155,4 +156,4 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 ## 发布信息
 
 - **发布名：** `passbook-me`
-- **当前版本：** v1.0
+- **当前版本：** v1.1

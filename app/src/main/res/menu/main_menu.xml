@@ -10,6 +10,12 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/menu_oss_backup"
+        android:icon="@drawable/ic_backup"
+        android:title="@string/menu_oss_backup"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/menu_export"
         android:icon="@drawable/ic_export"
         android:title="@string/menu_export"

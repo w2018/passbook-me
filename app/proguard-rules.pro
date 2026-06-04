@@ -38,6 +38,14 @@
 -keep class org.apache.commons.net.** { *; }
 -dontwarn org.apache.commons.net.**
 
+# 阿里云 OSS SDK
+-keep class com.alibaba.sdk.android.oss.** { *; }
+-dontwarn com.alibaba.sdk.android.oss.**
+
+# OSS 工具类
+-keep class top.zw.passwd.OssClientUtil { *; }
+-keep class top.zw.passwd.OssClientUtil$OssConfig { *; }
+
 # EncryptedSharedPreferences (Security Crypto)
 -keep class androidx.security.crypto.** { *; }
 

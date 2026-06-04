@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
     // === FTP 配置回调 ===
     private androidx.activity.result.ActivityResultLauncher<Intent> ftpConfigLauncher;
 
+    // === OSS 配置回调 ===
+    private androidx.activity.result.ActivityResultLauncher<Intent> ossConfigLauncher;
+
     // === 编辑记录回调 ===
     private androidx.activity.result.ActivityResultLauncher<Intent> editRecordLauncher;
 
@@ -112,6 +115,21 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, R.string.config_saved, Toast.LENGTH_SHORT).show();
                 } else if (configCleared) {
                             Toast.makeText(MainActivity.this, R.string.ftp_config_cleared, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+        // 注册 OSS 配置回调
+        ossConfigLauncher = registerForActivityResult(
+                new androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        boolean configSaved = result.getData().getBooleanExtra("oss_config_saved", false);
+                        boolean configCleared = result.getData().getBooleanExtra("oss_config_cleared", false);
+                        if (configSaved) {
+                            Toast.makeText(MainActivity.this, R.string.config_saved, Toast.LENGTH_SHORT).show();
+                        } else if (configCleared) {
+                            Toast.makeText(MainActivity.this, R.string.oss_config_cleared, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -319,6 +337,10 @@ public class MainActivity extends AppCompatActivity {
             // FTP备份：总是先进入设置页，用户可在设置页修改配置或点击「上传备份」触发上传
             showFtpConfigDialog();
             return true;
+        } else if (id == R.id.menu_oss_backup) {
+            // OSS备份：总是先进入配置页（与FTP一致），用户可在配置页修改配置或点击「上传备份」触发上传
+            showOssConfigDialog();
+            return true;
         } else if (id == R.id.menu_export) {
             // 导出数据：选择格式（加密DB或明文JSON）
             showExportDialog();
@@ -393,6 +415,52 @@ public class MainActivity extends AppCompatActivity {
     private void showFtpConfigDialog() {
         Intent intent = new Intent(this, FtpConfigActivity.class);
         ftpConfigLauncher.launch(intent);
+    }
+
+    // ==================== OSS 备份 ====================
+
+    private void performOssBackup() {
+        // 先导出加密数据库到缓存目录
+        File cacheDir = new File(getCacheDir(), "oss_backup");
+        File dbFile = ImportExportUtil.exportEncryptedDb(this, cacheDir);
+        if (dbFile == null) {
+            Toast.makeText(this, R.string.export_failed, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 在后台线程执行 OSS 上传
+        Toast.makeText(this, R.string.oss_connecting, Toast.LENGTH_SHORT).show();
+        new Thread(() -> {
+            OssClientUtil ossUtil = new OssClientUtil();
+            try {
+                ossUtil.initClient(this);
+                OssClientUtil.OssConfig config = OssClientUtil.getOssConfig(this);
+                String objectKey = OssClientUtil.buildObjectKey(config.remoteDir, dbFile.getName());
+                boolean uploaded = ossUtil.uploadSync(this, objectKey, dbFile.getAbsolutePath());
+                ossUtil.destroy();
+
+                runOnUiThread(() -> {
+                    if (uploaded) {
+                        Toast.makeText(MainActivity.this, R.string.oss_test_success, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(MainActivity.this, R.string.oss_test_failed, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+                ossUtil.destroy();
+                runOnUiThread(() ->
+                        Toast.makeText(MainActivity.this, R.string.oss_test_failed, Toast.LENGTH_SHORT).show());
+            } finally {
+                // 清理临时文件
+                if (dbFile.exists()) dbFile.delete();
+            }
+        }).start();
+    }
+
+    private void showOssConfigDialog() {
+        Intent intent = new Intent(this, OssConfigActivity.class);
+        ossConfigLauncher.launch(intent);
     }
 
     // ==================== 关于 ====================

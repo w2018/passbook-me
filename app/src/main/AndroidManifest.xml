@@ -78,6 +78,13 @@
             android:label="FTP配置"
             android:theme="@style/Theme.Passwd" />
 
+        <activity
+            android:name=".OssConfigActivity"
+            android:exported="false"
+            android:label="OSS配置"
+            android:theme="@style/Theme.Passwd"
+            android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>

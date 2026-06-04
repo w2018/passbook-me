@@ -75,8 +75,8 @@
 
     <!-- 其他 -->
     <!-- 关于页面 -->
-    <string name="about_text">个人密码本 v2.0\nMaterial Design 3 重建版\n安全、简洁、高效</string>
-    <string name="about_description">个人密码薄 v1.0\n\n一款安全可靠的本地密码管理工具。\n采用 SQLCipher 加密存储，无网络传输，\n确保您的密码数据始终私密、安全。\n\n发布名: passbook-me</string>
+    <string name="about_text">个人密码薄 v1.1\nMaterial Design 3 重建版\n安全、简洁、高效</string>
+    <string name="about_description">个人密码薄 v1.1\n\n一款安全可靠的本地密码管理工具。\n采用 SQLCipher 加密存储，无网络传输，\n确保您的密码数据始终私密、安全。\n\n发布名: passbook-me</string>
     <string name="about_version_label">版本</string>
     <string name="about_author_label">作者</string>
     <string name="about_author_placeholder">w2018</string>
@@ -156,6 +156,28 @@
         <item>@string/q_default_7</item>
         <item>@string/q_default_8</item>
     </string-array>
+
+    <!-- OSS 备份配置 -->
+    <string name="menu_oss_backup">OSS备份</string>
+    <string name="oss_config_title">阿里云OSS备份配置</string>
+    <string name="oss_config_hint">配置阿里云OSS信息用于备份密码数据</string>
+    <string name="oss_endpoint_hint">Endpoint 例如 oss-cn-hangzhou.aliyuncs.com</string>
+    <string name="oss_bucket_hint">Bucket 名称</string>
+    <string name="oss_access_key_id_hint">AccessKey ID</string>
+    <string name="oss_access_key_secret_hint">AccessKey Secret</string>
+    <string name="oss_path_hint">远程路径（可选，默认 /）</string>
+    <string name="oss_upload">上传备份到 OSS</string>
+    <string name="oss_success">OSS 备份上传成功</string>
+    <string name="oss_failed">OSS 上传失败</string>
+    <string name="oss_connecting">正在上传到 OSS…</string>
+    <string name="btn_test_oss_connection">测试 OSS 连接</string>
+    <string name="btn_save_oss_config">保存 OSS 配置</string>
+    <string name="btn_clear_oss_config">清除 OSS 配置</string>
+    <string name="oss_config_fields_hint">请填写完整的OSS配置信息</string>
+    <string name="oss_config_saved">OSS配置已保存</string>
+    <string name="oss_config_cleared">OSS配置已清除</string>
+    <string name="oss_test_success">OSS连接测试成功 ✓</string>
+    <string name="oss_test_failed">OSS连接失败，请检查配置</string>
 
     <!-- FTP配置界面 -->
     <string name="ftp_config_title">FTP服务器配置</string>
