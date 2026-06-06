@@ -51,22 +51,21 @@ passwd_v2/
 | **应用入口** | `MyApplication.java` | Application 初始化，提供全局 Context、数据库路径、加密密码 |
 | **主界面** | `MainActivity.java` | 密码列表展示、搜索（500ms防抖）、分页加载（每页20条）、FTP备份、导入导出、关于对话框 |
 | **密码详情** | `PlayActivity.java` | 查看密码完整信息，支持一键复制、编辑、删除、分享 |
-| **编辑密码** | `EditRecordActivity.java` | 新增/编辑密码记录（标题、网址、用户名、密码、邮箱、手机号、备注） |
+| **编辑密码** | `EditRecordActivity.java` | 编辑密码记录（标题、网址、用户名、密码、邮箱、手机号、备注） |
 | **安全验证** | `VerifyPasswordActivity.java` | 启动时验证主密码 |
 | **设置密码** | `SetPasswordActivity.java` | 首次使用设置主密码 |
 | **密保问题** | `SecurityQuestionActivity.java` | 设置密保问题及答案（用于密码找回） |
 | **密保验证** | `VerifyQuestionActivity.java` | 通过密保问题验证身份 |
-| **FTP配置** | `FtpConfigActivity.java` | 配置FTP服务器地址、端口、路径、凭证 |
 | **数据模型** | `DataInfo.java` | 密码记录实体类（含_id、title、loginUser、loginPwd等字段） |
 | **数据库帮助器** | `MyDatabaseHelper.java` | SQLCipher 加密数据库的单例封装，参数化查询防SQL注入，支持v1→v2迁移（增加updateTime字段） |
 | **数据库操作** | `SqlClass.java` | 数据库CRUD操作封装层 |
 | **列表适配器** | `PasswordListAdapter.java` | RecyclerView适配器，绑定密码卡片视图 |
 | **加载更多** | `LoadMoreListView.java` | 自定义上拉加载更多组件 |
 | **导入导出** | `ImportExportUtil.java` | 支持加密DB文件导出/导入、JSON格式明文导出/导入 |
+| **FTP配置** | `FtpConfigActivity.java` | 配置FTP服务器地址、端口、路径、凭证 |
 | **FTP客户端** | `FTPClientUtil.java` | Apache Commons Net封装，支持FTP上传加密数据库备份 |
 | **主题管理** | `ThemeManager.java` | 日间/夜间主题切换管理 |
 | **剪贴板工具** | `ClipboardUtil.java` | 文本复制到系统剪贴板 |
-| **数据迁移** | `DataMigrator.java` | 从旧版数据库迁移数据 |
 
 ---
 
@@ -87,12 +86,11 @@ passwd_v2/
 - **分享功能**：可将密码信息分享给其他应用
 
 ### 💾 数据备份与迁移
-- **OSS云备份**：支持阿里云OSS，一键上传加密数据库至云端存储（自动补全https协议头）
+- **OSS云备份**：支持阿里云OSS，一键上传加密数据库至云端存储
 - **FTP备份**：配置FTP服务器后，一键上传加密数据库文件至远程服务器
 - **导入/导出**：
   - 加密DB格式：完整导出加密数据库文件（含密码保护）
   - JSON格式：导出为纯文本JSON，便于人工查看或迁移
-- **数据迁移**：支持从旧版数据库结构升级迁移
 
 ### 🎨 界面体验
 - **Material Design 3**：现代化UI设计，圆角卡片布局
@@ -125,9 +123,6 @@ passwd_v2/
 
 # 产物路径
 # app/build/outputs/apk/debug/app-debug.apk
-
-# 安装（需 root 或 adb）
-adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ---
@@ -138,7 +133,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 2. **添加密码**：点击右下角"+"按钮 → 填写信息 → 保存
 3. **查看详情**：点击列表中的记录 → 查看完整信息
 4. **搜索记录**：顶部搜索框输入关键词 → 自动过滤
-5. **FTP备份**：菜单 → FTP备份 → 配置服务器 → 上传
+5. **数据备份**：菜单 → XXX备份 → 配置服务器 → 上传
 6. **数据导出**：菜单 → 导出数据 → 选择格式（DB/JSON）
 7. **数据导入**：菜单 → 导入数据 → 选择文件
 
@@ -149,7 +144,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 - 本项目为 **个人学习用途**，仅供参考
 - 请勿将本项目用于存储任何违法或敏感信息
 - 作者不对因使用本软件造成的任何数据丢失或泄露承担责任
-- 建议定期通过FTP或导出功能备份您的密码数据
+- 建议定期通过FTP、OSS或导出功能备份您的密码数据
 
 ---
 
